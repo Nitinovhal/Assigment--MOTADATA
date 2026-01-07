@@ -1,10 +1,12 @@
 ## Assigment MOTA-DATA
 
 
- Prompt 1: Diagnosing High CPU / Memory / Disk Usage on Linux VM 
+//  Prompt 1: Diagnosing High CPU / Memory / Disk Usage on Linux VM 
 You are a Senior Linux Infrastructure Engineer with deep expertise in VMware vSphere and Linux OS internals.
-
 I am troubleshooting a production Linux VM running on VMware vSphere/ESXi that is experiencing intermittent performance degradation.
+
+
+
 
 Symptoms:
 - End users report slow application response
@@ -18,6 +20,7 @@ Environment details-
 - Application is multi-process (Java/Python-based)
 - No recent ESXi host failures reported
 
+
 I want you to:
 1. Provide a structured, step-by-step diagnostic approach covering:
    - Linux OS level (CPU, memory, disk, processes)
@@ -27,29 +30,25 @@ I want you to:
 4. Identify common root causes (CPU overcommitment, memory leaks, noisy neighbors, disk contention, mis-sized VM).
 5. Suggest immediate mitigation steps and long-term fixes (VM resizing, application tuning, reservations/limits, capacity planning).
 
+
 Respond with clear sections, commands, interpretation guidance, and real-world operational tips.
 
-  1. Intent Behind This Prompt
-
-The intent is to systematically diagnose performance issues across both the Linux OS and VMware virtualization layer, instead of treating them in isolation.
+  //1. Intent Behind This Prompt
+-----The intent is to systematically diagnose performance issues across both the Linux OS and VMware virtualization layer, instead of treating them in isolation.
 
   2. How the AI’s Response Helps
-
-Provides a production-grade troubleshooting runbook
+------Provides a production-grade troubleshooting runbook
 
 Helps correlate Linux metrics with vSphere metrics (critical in interviews)
 
 Demonstrates understanding of CPU Ready Time, ballooning, swap, I/O wait
-
 Can be directly reused during real incidents or on-call rotations
 
 
-✅ Prompt 2: Designing Auto-Recovery Logic for an Unresponsive Linux VM
+// Prompt 2: Designing Auto-Recovery Logic for an Unresponsive Linux VM
 
-You are an expert in Linux automation, reliability engineering, and VMware-based infrastructure operations.
-
+ You are an expert in Linux automation, reliability engineering, and VMware-based infrastructure operations.
 I need to design an automated recovery mechanism for Linux virtual machines hosted on VMware vSphere.
-
 Scenario:
 - A Linux VM occasionally becomes unresponsive (SSH hangs, application health checks fail)
 - VMware reports the VM as powered on, but OS-level services are stuck
@@ -71,7 +70,7 @@ Requirements:
 4. Include safeguards to avoid reboot loops and false positives.
 5. Explain how this solution would integrate with monitoring tools (Prometheus, Nagios, Zabbix, or vCenter alarms).
 
-Explain your solution step by step, including failure scenarios, rollback logic, and operational best practices.
+
 
   // Intent Behind This Prompt
 ----- The intent is to design a fault-tolerant, self-healing mechanism that reduces manual intervention and improves VM availability.
@@ -80,15 +79,5 @@ Explain your solution step by step, including failure scenarios, rollback logic,
 
       --------  Produces a real-world auto-recovery design (L2/L3 Linux admin level)
 
-Shows ability to combine Linux + automation + VMware APIs
 
-Demonstrates SRE thinking (graceful recovery, safeguards, observability)
-
-Can be directly converted into:
-
-Cron jobs
-
-Ansible Tower/AWX workflows
-
-Production recovery automation
 
