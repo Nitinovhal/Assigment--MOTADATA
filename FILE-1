@@ -5,9 +5,6 @@
 You are a Senior Linux Infrastructure Engineer with deep expertise in VMware vSphere and Linux OS internals.
 I am troubleshooting a production Linux VM running on VMware vSphere/ESXi that is experiencing intermittent performance degradation.
 
-
-
-
 Symptoms:
 - End users report slow application response
 - VMware vCenter shows high CPU Ready Time intermittently
@@ -20,7 +17,6 @@ Environment details-
 - Application is multi-process (Java/Python-based)
 - No recent ESXi host failures reported
 
-
 I want you to:
 1. Provide a structured, step-by-step diagnostic approach covering:
    - Linux OS level (CPU, memory, disk, processes)
@@ -31,22 +27,19 @@ I want you to:
 5. Suggest immediate mitigation steps and long-term fixes (VM resizing, application tuning, reservations/limits, capacity planning).
 
 
-Respond with clear sections, commands, interpretation guidance, and real-world operational tips.
 
-  //1. Intent Behind This Prompt
+  //1. Purpose Behind This Prompt
 -----The intent is to systematically diagnose performance issues across both the Linux OS and VMware virtualization layer, instead of treating them in isolation.
 
   2. How the AI’s Response Helps
 ------Provides a production-grade troubleshooting runbook
 
-Helps correlate Linux metrics with vSphere metrics (critical in interviews)
-
+Helps correlate Linux metrics with vSphere metrics 
 Demonstrates understanding of CPU Ready Time, ballooning, swap, I/O wait
 Can be directly reused during real incidents or on-call rotations
 
 
 // Prompt 2: Designing Auto-Recovery Logic for an Unresponsive Linux VM
-
  You are an expert in Linux automation, reliability engineering, and VMware-based infrastructure operations.
 I need to design an automated recovery mechanism for Linux virtual machines hosted on VMware vSphere.
 Scenario:
