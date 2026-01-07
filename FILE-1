@@ -1,3 +1,94 @@
 ## Assigment MOTA-DATA
 
 
+ Prompt 1: Diagnosing High CPU / Memory / Disk Usage on Linux VM 
+You are a Senior Linux Infrastructure Engineer with deep expertise in VMware vSphere and Linux OS internals.
+
+I am troubleshooting a production Linux VM running on VMware vSphere/ESXi that is experiencing intermittent performance degradation.
+
+Symptoms:
+- End users report slow application response
+- VMware vCenter shows high CPU Ready Time intermittently
+- Inside the Linux VM, CPU usage spikes occasionally, memory usage steadily increases, and disk I/O wait is observed during peak hours
+
+Environment details-
+- OS: RHEL/CentOS-based Linux
+- VM is running on shared ESXi hosts
+- VMware Tools is installed and running
+- Application is multi-process (Java/Python-based)
+- No recent ESXi host failures reported
+
+I want you to:
+1. Provide a structured, step-by-step diagnostic approach covering:
+   - Linux OS level (CPU, memory, disk, processes)
+   - VMware virtualization layer (CPU Ready, ballooning, swapping)
+2. List exact Linux commands to run (top, htop, vmstat, iostat, free, sar, pidstat, lsof, etc.) and explain what to look for in their output.
+3. Explain how to correlate Linux metrics with vSphere metrics (CPU Ready %, memory ballooning, datastore latency).
+4. Identify common root causes (CPU overcommitment, memory leaks, noisy neighbors, disk contention, mis-sized VM).
+5. Suggest immediate mitigation steps and long-term fixes (VM resizing, application tuning, reservations/limits, capacity planning).
+
+Respond with clear sections, commands, interpretation guidance, and real-world operational tips.
+
+  1. Intent Behind This Prompt
+
+The intent is to systematically diagnose performance issues across both the Linux OS and VMware virtualization layer, instead of treating them in isolation.
+
+  2. How the AI’s Response Helps
+
+Provides a production-grade troubleshooting runbook
+
+Helps correlate Linux metrics with vSphere metrics (critical in interviews)
+
+Demonstrates understanding of CPU Ready Time, ballooning, swap, I/O wait
+
+Can be directly reused during real incidents or on-call rotations
+
+
+✅ Prompt 2: Designing Auto-Recovery Logic for an Unresponsive Linux VM
+
+You are an expert in Linux automation, reliability engineering, and VMware-based infrastructure operations.
+
+I need to design an automated recovery mechanism for Linux virtual machines hosted on VMware vSphere.
+
+Scenario:
+- A Linux VM occasionally becomes unresponsive (SSH hangs, application health checks fail)
+- VMware reports the VM as powered on, but OS-level services are stuck
+- Manual intervention is currently required (service restart or VM reboot)
+
+Requirements:
+1. Design an auto-recovery workflow that:
+   - Detects OS unresponsiveness using health checks (SSH, process checks, HTTP checks)
+   - Attempts graceful recovery first (restart services)
+   - Escalates to VM reboot only if required
+2. Propose an architecture using:
+   - Shell scripts or Python for health checks
+   - Ansible for orchestration
+   - Optional VMware APIs or PowerCLI logic for VM-level actions
+3. Provide example scripts/playbooks for:
+   - Health check logic
+   - Decision-making (retry vs reboot)
+   - Logging and alerting
+4. Include safeguards to avoid reboot loops and false positives.
+5. Explain how this solution would integrate with monitoring tools (Prometheus, Nagios, Zabbix, or vCenter alarms).
+
+Explain your solution step by step, including failure scenarios, rollback logic, and operational best practices.
+
+  // Intent Behind This Prompt
+----- The intent is to design a fault-tolerant, self-healing mechanism that reduces manual intervention and improves VM availability.
+
+   //How the AI’s Response Helps
+
+      --------  Produces a real-world auto-recovery design (L2/L3 Linux admin level)
+
+Shows ability to combine Linux + automation + VMware APIs
+
+Demonstrates SRE thinking (graceful recovery, safeguards, observability)
+
+Can be directly converted into:
+
+Cron jobs
+
+Ansible Tower/AWX workflows
+
+Production recovery automation
+
