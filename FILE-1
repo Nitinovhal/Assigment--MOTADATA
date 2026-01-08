@@ -101,6 +101,7 @@ Reliability: Logging, exception handling, retention policies
 Outcome: Faster recovery, safer patching, reduced downtime
 
 //Performance & Reliability Considerations
+Providing high avilablity
 Snapshot duration and datastore impact measured during test runs.
 Rollback time benchmarked before production rollout.
 Alerts integrated for snapshot failures or long-running snapshots.
